@@ -88,6 +88,11 @@ jobs:
           echo '${{ secrets.KEYSTORE }}' | base64 --decode > android/app/upload-keystore.jks
           echo '${{ secrets.KEY_PROPERTIES }}' > android/key.properties
 
+      - name: Fix dependencies
+        run: |
+         mkdir -p ~/.pub-cache/git/flutter_new_pipe_extractor-*/assets/
+         touch ~/.pub-cache/git/flutter_new_pipe_extractor-*/assets/.gitkeep
+
       - name: Build ${{matrix.platform}} binaries
         run: dart cli/cli.dart build --arch=${{matrix.arch}} ${{matrix.platform}}
         env:
