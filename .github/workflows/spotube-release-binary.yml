@@ -23,6 +23,7 @@ env:
   FLUTTER_VERSION: 3.35.2
   FLUTTER_CHANNEL: master
   lastFmApiKey: "hohdfhjdghjgfghgxdgjj"
+  LASTFM_API_KEY: "gudfuudrhhddgjjgfd"
 
 permissions:
   contents: write
