@@ -97,11 +97,11 @@ jobs:
         if: ${{matrix.platform == 'android'}}
         run: |
         
-         # Install Android NDK if not present (GitHub Actions usually has it)
+          # Install Android NDK if not present (GitHub Actions usually has it)
         
           echo "ANDROID_NDK_HOME=$ANDROID_NDK_HOME"
     
-         # Set environment variables for Rust cross-compilation
+          # Set environment variables for Rust cross-compilation
           echo "TARGET_CC=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi21-clang" >> $GITHUB_ENV
           echo "TARGET_AR=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar" >> $GITHUB_ENV
           echo "CC_armv7-linux-androideabi=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi21-clang" >> $GITHUB_ENV
@@ -111,7 +111,7 @@ jobs:
           echo "CC_x86_64-linux-android=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android21-clang" >> $GITHUB_ENV
           echo "CC_i686-linux-android=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/i686-linux-android21-clang" >> $GITHUB_ENV
     
-         # Critical for bindgen to find the right headers
+          # Critical for bindgen to find the right headers
           echo "BINDGEN_EXTRA_CLANG_ARGS=--sysroot=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/sysroot" >> $GITHUB_ENV
     
 
