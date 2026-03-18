@@ -5,6 +5,10 @@ plugins {
     id "org.jetbrains.kotlin.plugin.compose"
 }
 
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
