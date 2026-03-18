@@ -100,7 +100,11 @@ jobs:
           sudo apt-get install -y gcc-multilib libc6-dev-i386
           
       - name: Build ${{matrix.platform}} binaries
-        run: dart cli/cli.dart build --arch=${{matrix.arch}} ${{matrix.platform}}
+        run: |
+          flutter pub get
+          dart pub global activate fastforge
+          # In your CLI or flutter build, target only arm64       
+          flutter build apk --target-platform android-arm64 --flavor nightly
         env:
           CHANNEL: ${{inputs.channel}}
           DOTENV: ${{secrets.DOTENV_RELEASE}}
