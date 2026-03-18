@@ -22,6 +22,7 @@ on:
 env:
   FLUTTER_VERSION: 3.35.2
   FLUTTER_CHANNEL: master
+  lastFmApiKey: "hohdfhjdghjgfghgxdgjj"
 
 permissions:
   contents: write
